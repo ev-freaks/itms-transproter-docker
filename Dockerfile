@@ -3,6 +3,8 @@ LABEL author=remus@ev-freaks.com
 
 ARG ITMS_INSTALLER "iTMSTransporter_installer_linux_2.2.0.10.sh"
 
+RUN apt-get update ; apt-get install -y make ; rm -rf /var/lib/apt/lists/*
+
 FROM base as builder
 RUN apt-get update ; apt-get install -y sudo expect
 
